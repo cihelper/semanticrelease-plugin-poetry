@@ -51,6 +51,7 @@ async function publish(pluginConfig, context) {
     logger,
   } = context;
   const { publishPoetry, pkgRoot } = pluginConfig;
+  const { PYPI_TOKEN } = env;
 
   if (publishPoetry !== false) {
     const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
@@ -63,7 +64,7 @@ async function publish(pluginConfig, context) {
         "--username",
         "__token__",
         "--password",
-        "$PYPI_TOKEN",
+        PYPI_TOKEN,
         "--no-interaction",
         "-vvv",
       ],
