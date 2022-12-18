@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.2...v1.0.3) (2022-12-18)
+
+
+### Bug Fixes
+
+* switch from main to exports ([2dc903a](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/2dc903ae48a0597c551297616050de75c756a464))
+
 ## [1.0.2](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.1...v1.0.2) (2022-12-18)
 
 
