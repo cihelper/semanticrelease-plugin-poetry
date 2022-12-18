@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.4...v1.0.5) (2022-12-18)
+
+
+### Bug Fixes
+
+* downgrade execa and use require ([daf97b8](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/daf97b83309b9f4b19d617bf6c508a4ce9c181b4))
+
 ## [1.0.4](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.3...v1.0.4) (2022-12-18)
 
 
