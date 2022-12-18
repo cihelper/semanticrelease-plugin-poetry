@@ -74,7 +74,7 @@ async function publish(pluginConfig, context) {
     result.stderr.pipe(stderr, { end: false });
     await result;
 
-    logger.log(`Published ${pkg.name}==${version} to pypi`);
+    logger.log(`Published ${name}==${version} to pypi`);
 
     return {
       name: `pypi package`,
