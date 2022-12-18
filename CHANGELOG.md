@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.5...v1.0.6) (2022-12-18)
+
+
+### Bug Fixes
+
+* properly pass pypi token to poetry ([8726b65](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/8726b651f1dab1cfc22ee45a17d7bc2e809d9d60))
+
 ## [1.0.5](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.4...v1.0.5) (2022-12-18)
 
 
