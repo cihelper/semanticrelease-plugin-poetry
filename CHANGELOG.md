@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.6...v1.0.7) (2022-12-18)
+
+
+### Bug Fixes
+
+*  missing variable ([1c3b358](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/1c3b358e4c79a073191f460da49fd8cc6407a31b))
+
 ## [1.0.6](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.5...v1.0.6) (2022-12-18)
 
 
