@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/cihelper/semanticrelease-plugin-poetry#README",
   "dependencies": {
-    "execa": "^6.1.0"
+    "execa": "^5.0.0"
   },
   "devDependencies": {
     "@cihelper/semanticrelease-preset-npm": "^1"
