@@ -74,11 +74,11 @@ async function publish(pluginConfig, context) {
     result.stderr.pipe(stderr, { end: false });
     await result;
 
-    logger.log(`Published ${name}==${version} to pypi`);
+    logger.log(`Published version ${version} to pypi`);
 
     return {
       name: `pypi package`,
-      url: `https://pypi.org/project/${name}/${version}/`,
+      url: `https://pypi.org/`,
     };
   }
 
