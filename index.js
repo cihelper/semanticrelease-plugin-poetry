@@ -1,6 +1,6 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/plugins.md
-const path = import("path");
-const execa = import("execa");
+import { execa } from "execa";
+import path from "path";
 
 async function verifyConditions(pluginConfig, context) {}
 
