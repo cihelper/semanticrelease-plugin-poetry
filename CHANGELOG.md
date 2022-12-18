@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.3...v1.0.4) (2022-12-18)
+
+
+### Bug Fixes
+
+* switch to commonjs with dynamic import ([62fe3b0](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/62fe3b0b35278cd2fa2aabcef21f6cebaa905413))
+
 ## [1.0.3](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.2...v1.0.3) (2022-12-18)
 
 
