@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.0...v1.0.1) (2022-12-18)
+
+
+### Bug Fixes
+
+* change require to import ([aba79d0](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/aba79d0fba517fe8a02df16f8799394c07a03a7d))
+
 ## 1.0.0 (2022-12-18)
 
 
