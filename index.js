@@ -1,10 +1,10 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/plugins.md
-import { execa } from "execa";
-import path from "path";
+const { execa } = await import("execa");
+const path = import("path");
 
 async function verifyConditions(pluginConfig, context) {}
 
-export async function prepare(pluginConfig, context) {
+async function prepare(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/prepare.js
   const {
     cwd,
@@ -40,7 +40,7 @@ export async function prepare(pluginConfig, context) {
   await buildresult;
 }
 
-export async function publish(pluginConfig, context) {
+async function publish(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/publish.js
   const {
     cwd,
@@ -84,3 +84,5 @@ export async function publish(pluginConfig, context) {
   logger.log(`Skip publishing to npm registry as publishPoetry is false`);
   return false;
 }
+
+module.exports = { prepare, publish };
