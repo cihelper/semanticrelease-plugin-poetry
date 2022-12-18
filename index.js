@@ -4,7 +4,7 @@ import path from "path";
 
 async function verifyConditions(pluginConfig, context) {}
 
-async function prepare(pluginConfig, context) {
+export async function prepare(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/prepare.js
   const {
     cwd,
@@ -40,7 +40,7 @@ async function prepare(pluginConfig, context) {
   await buildresult;
 }
 
-async function publish(pluginConfig, context) {
+export async function publish(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/publish.js
   const {
     cwd,
@@ -84,5 +84,3 @@ async function publish(pluginConfig, context) {
   logger.log(`Skip publishing to npm registry as publishPoetry is false`);
   return false;
 }
-
-module.exports = { verifyConditions, prepare, publish };
