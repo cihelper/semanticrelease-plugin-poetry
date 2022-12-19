@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/cihelper/semanticrelease-plugin-poetry#README",
   "dependencies": {
+    "@iarna/toml": "^2.2.5",
     "execa": "^5.0.0"
   },
   "devDependencies": {

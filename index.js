@@ -1,6 +1,8 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/plugins.md
 const execa = require("execa");
 const path = require("path");
+const toml = require("@iarna/toml");
+const fs = require("fs");
 
 async function verifyConditions(pluginConfig, context) {}
 
@@ -77,7 +79,15 @@ async function publish(pluginConfig, context) {
 
   if (publishPoetry !== false) {
     const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
-    logger.log(`Publishing version ${version} to pypi registry`);
+
+    const pyprojectContent = fs
+      .readFileSync(path.join(basePath, "pyproject.toml"))
+      .toString();
+    const pyproject = toml.parse(pyprojectContent);
+    const pypiName = pyproject.tool.poetry.name;
+    const pypiVersion = pyproject.tool.poetry.version;
+
+    logger.log(`Publishing version ${pypiVersion} to pypi registry`);
 
     const result = execa(
       "poetry",
@@ -96,11 +106,11 @@ async function publish(pluginConfig, context) {
     result.stderr.pipe(stderr, { end: false });
     await result;
 
-    logger.log(`Published version ${version} to pypi`);
+    logger.log(`Published ${pypiName}==${pypiVersion} to pypi`);
 
     return {
       name: `pypi package`,
-      url: `https://pypi.org/`,
+      url: `https://pypi.org/project/${pypiName}/${pypiVersion}/`,
     };
   }
 
