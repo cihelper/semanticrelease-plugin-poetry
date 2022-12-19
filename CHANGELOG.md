@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.8...v1.1.0) (2022-12-19)
+
+
+### Features
+
+* enforce pep440 versioning for prereleases ([9de1111](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/9de1111be51e3692091107efd201e87585957389))
+* parse toml to get package name and version ([e435df7](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/e435df731fb0c5efbe3c901624a04cb61f9b7165))
+
 ## [1.0.8](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.7...v1.0.8) (2022-12-18)
 
 
