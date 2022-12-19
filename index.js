@@ -4,6 +4,20 @@ const path = require("path");
 
 async function verifyConditions(pluginConfig, context) {}
 
+const channelMap = {
+  alpha: "a",
+  beta: "b",
+  next: "rc",
+  rc: "rc",
+  // dev is not definded as it is the default fallback value
+};
+
+// nextRelease.type: patch
+// nextRelease.channel: beta
+// nextRelease.version: 1.2.3-beta.1
+// nextRelease.gitTag: v1.2.3-beta.1
+// nextRelease.name: v1.2.3-beta.1
+
 async function prepare(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/prepare.js
   const {
@@ -11,14 +25,22 @@ async function prepare(pluginConfig, context) {
     env,
     stdout,
     stderr,
-    nextRelease: { version },
+    nextRelease: { version, channel },
     logger,
   } = context;
   const { pkgRoot } = pluginConfig;
 
   const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
+  let pepVersion = version;
 
-  const versionResult = execa("poetry", ["version", version], {
+  if (channel !== undefined) {
+    const [mainVersion, versionSuffix] = version.split("-");
+    const [, buildVersion] = versionSuffix.split(".");
+    const separator = channelMap[channel] ?? "dev";
+    pepVersion = `${mainVersion}${separator}${buildVersion}`;
+  }
+
+  const versionResult = execa("poetry", ["version", pepVersion], {
     cwd: basePath,
     env,
     preferLocal: true,
