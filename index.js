@@ -33,13 +33,17 @@ async function prepare(pluginConfig, context) {
   const { pkgRoot } = pluginConfig;
 
   const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
-  let pepVersion = version;
 
-  if (channel !== undefined && channel !== "undefined") {
-    const [mainVersion, versionSuffix] = version.split("-");
+  const [mainVersion, versionSuffix] = version.split("-");
+  let pepVersion = mainVersion;
+
+  if (versionSuffix !== undefined) {
     const [, buildVersion] = versionSuffix.split(".");
-    const separator = channelMap[channel] ?? "dev";
-    pepVersion = `${mainVersion}${separator}${buildVersion}`;
+
+    if (buildVersion !== undefined) {
+      const separator = channelMap[channel] ?? "dev";
+      pepVersion = `${mainVersion}${separator}${buildVersion}`;
+    }
   }
 
   const versionResult = execa("poetry", ["version", pepVersion], {
