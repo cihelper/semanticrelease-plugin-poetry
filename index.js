@@ -35,7 +35,7 @@ async function prepare(pluginConfig, context) {
   const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
   let pepVersion = version;
 
-  if (channel !== undefined) {
+  if (channel !== undefined && channel !== "undefined") {
     const [mainVersion, versionSuffix] = version.split("-");
     const [, buildVersion] = versionSuffix.split(".");
     const separator = channelMap[channel] ?? "dev";
