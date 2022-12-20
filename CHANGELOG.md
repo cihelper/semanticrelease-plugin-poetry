@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.0...v1.1.1) (2022-12-20)
+
+
+### Bug Fixes
+
+* properly check release channel ([7eb8172](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/7eb8172878e7037e60b96d6dd238fdff5773cc7b))
+
 ## [1.1.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.0.8...v1.1.0) (2022-12-19)
 
 
