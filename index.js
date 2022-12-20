@@ -113,7 +113,7 @@ async function publish(pluginConfig, context) {
     logger.log(`Published ${pypiName}==${pypiVersion} to pypi`);
 
     return {
-      name: `pypi package`,
+      name: `PyPI Package`,
       url: `https://pypi.org/project/${pypiName}/${pypiVersion}/`,
     };
   }
