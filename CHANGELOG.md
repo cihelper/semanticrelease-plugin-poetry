@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.2...v1.1.3) (2022-12-20)
+
+
+### Bug Fixes
+
+* correctly capitalize pypi ([4927a57](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/4927a57d0d77ed28c59bde7ce577bbefd679331e))
+
 ## [1.1.2](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.1...v1.1.2) (2022-12-20)
 
 
