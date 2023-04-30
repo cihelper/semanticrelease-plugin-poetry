@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.3...v1.2.0) (2023-04-30)
+
+
+### Features
+
+* remove dedicated publishPoetry option ([77332a7](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/77332a72296bc8300d0ea7e78ba6aead3decc63b))
+
 ## [1.1.3](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.2...v1.1.3) (2022-12-20)
 
 
