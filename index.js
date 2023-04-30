@@ -70,18 +70,11 @@ async function prepare(pluginConfig, context) {
 
 async function publish(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/publish.js
-  const {
-    cwd,
-    env,
-    stdout,
-    stderr,
-    nextRelease: { version },
-    logger,
-  } = context;
-  const { publishPoetry, pkgRoot } = pluginConfig;
+  const { cwd, env, stdout, stderr, logger } = context;
+  const { pkgRoot } = pluginConfig;
   const { PYPI_TOKEN } = env;
 
-  if (publishPoetry !== false) {
+  if (PYPI_TOKEN !== undefined && PYPI_TOKEN !== "") {
     const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
 
     const pyprojectContent = fs
@@ -118,7 +111,7 @@ async function publish(pluginConfig, context) {
     };
   }
 
-  logger.log(`Skip publishing to npm registry as publishPoetry is false`);
+  logger.log(`Skip publishing to npm registry due to empty PYPI_TOKEN`);
   return false;
 }
 
