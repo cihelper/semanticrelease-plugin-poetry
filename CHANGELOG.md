@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.2.0...v2.0.0) (2023-09-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch to es module
+
+### Features
+
+* switch to es module ([505a1fa](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/505a1faa652b446ca38cf435b5d190b3f0d6b461))
+
 ## [1.2.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.1.3...v1.2.0) (2023-04-30)
 
 
