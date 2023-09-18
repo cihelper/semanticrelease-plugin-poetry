@@ -1,10 +1,8 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/plugins.md
-const execa = require("execa");
-const path = require("path");
-const toml = require("@iarna/toml");
-const fs = require("fs");
-
-async function verifyConditions(pluginConfig, context) {}
+import { parse } from "@iarna/toml";
+import execa from "execa";
+import { readFileSync } from "fs";
+import { join, resolve } from "path";
 
 const channelMap = {
   alpha: "a",
@@ -20,7 +18,7 @@ const channelMap = {
 // nextRelease.gitTag: v1.2.3-beta.1
 // nextRelease.name: v1.2.3-beta.1
 
-async function prepare(pluginConfig, context) {
+export async function prepare(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/prepare.js
   const {
     cwd,
@@ -32,7 +30,7 @@ async function prepare(pluginConfig, context) {
   } = context;
   const { pkgRoot } = pluginConfig;
 
-  const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
+  const basePath = pkgRoot ? resolve(cwd, pkgRoot) : cwd;
 
   const [mainVersion, versionSuffix] = version.split("-");
   let pepVersion = mainVersion;
@@ -68,19 +66,19 @@ async function prepare(pluginConfig, context) {
   await buildresult;
 }
 
-async function publish(pluginConfig, context) {
+export async function publish(pluginConfig, context) {
   // https://github.com/semantic-release/npm/blob/master/lib/publish.js
   const { cwd, env, stdout, stderr, logger } = context;
   const { pkgRoot } = pluginConfig;
   const { PYPI_TOKEN } = env;
 
   if (PYPI_TOKEN !== undefined && PYPI_TOKEN !== "") {
-    const basePath = pkgRoot ? path.resolve(cwd, pkgRoot) : cwd;
+    const basePath = pkgRoot ? resolve(cwd, pkgRoot) : cwd;
 
-    const pyprojectContent = fs
-      .readFileSync(path.join(basePath, "pyproject.toml"))
-      .toString();
-    const pyproject = toml.parse(pyprojectContent);
+    const pyprojectContent = readFileSync(
+      join(basePath, "pyproject.toml")
+    ).toString();
+    const pyproject = parse(pyprojectContent);
     const pypiName = pyproject.tool.poetry.name;
     const pypiVersion = pyproject.tool.poetry.version;
 
@@ -114,5 +112,3 @@ async function publish(pluginConfig, context) {
   logger.log(`Skip publishing to npm registry due to empty PYPI_TOKEN`);
   return false;
 }
-
-module.exports = { prepare, publish };

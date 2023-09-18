@@ -2,6 +2,7 @@
   "name": "@cihelper/semanticrelease-plugin-poetry",
   "version": "1.2.0",
   "description": "Semantic Release configuration for Python projects using Poetry",
+  "type": "module",
   "main": "index.js",
   "files": [
     "index.js"
@@ -24,14 +25,14 @@
   },
   "homepage": "https://github.com/cihelper/semanticrelease-plugin-poetry#README",
   "dependencies": {
-    "@iarna/toml": "^2.2.5",
-    "execa": "^5.0.0"
+    "@iarna/toml": "^2.2",
+    "@semantic-release/exec": "^6"
   },
   "devDependencies": {
     "@cihelper/semanticrelease-preset-npm": "^1"
   },
   "peerDependencies": {
-    "semantic-release": ">=19.0.5"
+    "semantic-release": ">=22"
   },
   "release": {
     "extends": "@cihelper/semanticrelease-preset-npm"
