@@ -32,7 +32,7 @@
     "@cihelper/semanticrelease-preset-npm": "^1"
   },
   "peerDependencies": {
-    "semantic-release": ">=22"
+    "semantic-release": ">=20"
   },
   "release": {
     "extends": "@cihelper/semanticrelease-preset-npm"
