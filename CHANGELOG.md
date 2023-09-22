@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v2.0.0...v2.0.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* relax semantic-release version range ([406fdd0](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/406fdd0bfd8e63fecb66fcf473b75fda0ac20564))
+
 ## [2.0.0](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v1.2.0...v2.0.0) (2023-09-18)
 
 
