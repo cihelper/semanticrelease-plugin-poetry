@@ -1,6 +1,6 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/plugins.md
 import { parse } from "@iarna/toml";
-import execa from "execa";
+import { execa } from "execa";
 import { readFileSync } from "fs";
 import { join, resolve } from "path";
 
