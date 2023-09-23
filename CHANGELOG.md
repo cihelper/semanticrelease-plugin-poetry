@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v2.0.1...v2.0.2) (2023-09-23)
+
+
+### Bug Fixes
+
+* **deps:** bump execa to v8 ([1093c73](https://github.com/cihelper/semanticrelease-plugin-poetry/commit/1093c736f2fb66c03b0f31a1bf42a724c50a0b97))
+
 ## [2.0.1](https://github.com/cihelper/semanticrelease-plugin-poetry/compare/v2.0.0...v2.0.1) (2023-09-22)
 
 
